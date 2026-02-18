@@ -41,7 +41,7 @@ extern char g_Subsystem[32];
 #ifdef _ONESTACK_PRODUCT_REQ_
 #include <rdkb_feature_mode_gate.h>
 #endif
-#if defined((CISCO_CONFIG_DHCPV6_PREFIX_DELEGATION) && defined(_COSA_BCM_MIPS_)) || defined(_ONESTACK_PRODUCT_REQ_)
+#if (defined(CISCO_CONFIG_DHCPV6_PREFIX_DELEGATION) && defined(_COSA_BCM_MIPS_)) || defined(_ONESTACK_PRODUCT_REQ_)
 #include <netinet/in.h>
 #endif
 #define CLIENT_DUID_FILE "/var/lib/dibbler/client-duid"
@@ -2196,7 +2196,7 @@ int setUpLanPrefixIPv6(DML_VIRTUAL_IFACE* pVirtIf)
 
     CcspTraceWarning(("%s: setting lan-restart\n", __FUNCTION__));
     sysevent_set(sysevent_fd, sysevent_token, "lan-restart", "1", 0);
-#if defined((CISCO_CONFIG_DHCPV6_PREFIX_DELEGATION) && ! defined(DHCPV6_PREFIX_FIX)) || || defined(_ONESTACK_PRODUCT_REQ_)
+#if (defined(CISCO_CONFIG_DHCPV6_PREFIX_DELEGATION) && ! defined(DHCPV6_PREFIX_FIX)) || defined(_ONESTACK_PRODUCT_REQ_)
 #if defined(_ONESTACK_PRODUCT_REQ_)
     if (isFeatureSupportedInCurrentMode(FEATURE_IPV6_DELEGATION))
 #endif
