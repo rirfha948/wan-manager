@@ -32,7 +32,9 @@
 #include <ctype.h>
 #include <syscfg/syscfg.h>
 #include "secure_wrapper.h"
-
+#ifdef _ONESTACK_PRODUCT_REQ_
+#include <rdkb_feature_mode_gate.h>
+#endif
 extern int sysevent_fd;
 extern token_t sysevent_token;
 extern ANSC_HANDLE bus_handle;
