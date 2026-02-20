@@ -36,9 +36,6 @@
 #include <string.h>
 #include <unistd.h>
 #include "secure_wrapper.h"
-#ifdef _ONESTACK_PRODUCT_REQ_
-#include <rdkb_feature_mode_gate.h>
-#endif
 #if defined(_DT_WAN_Manager_Enable_)
 int _get_shell_output2(char * cmd, char * dststr)
 {

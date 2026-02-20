@@ -38,9 +38,6 @@ extern token_t sysevent_token;
 extern ANSC_HANDLE bus_handle;
 extern char g_Subsystem[32];
 
-#ifdef _ONESTACK_PRODUCT_REQ_
-#include <rdkb_feature_mode_gate.h>
-#endif
 #if (defined(CISCO_CONFIG_DHCPV6_PREFIX_DELEGATION) && defined(_COSA_BCM_MIPS_)) || defined(_ONESTACK_PRODUCT_REQ_)
 #include <netinet/in.h>
 #endif
